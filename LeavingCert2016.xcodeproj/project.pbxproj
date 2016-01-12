@@ -11,9 +11,9 @@
 		0179C9C71C3E9B0100B31543 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0179C9C61C3E9B0100B31543 /* ViewController.swift */; };
 		0179C9CA1C3E9B0100B31543 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0179C9C81C3E9B0100B31543 /* Main.storyboard */; };
 		0179C9CC1C3E9B0100B31543 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0179C9CB1C3E9B0100B31543 /* Assets.xcassets */; };
-		0179C9CF1C3E9B0100B31543 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0179C9CD1C3E9B0100B31543 /* LaunchScreen.storyboard */; };
 		0179C9DA1C3E9B0100B31543 /* LeavingCert2016Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0179C9D91C3E9B0100B31543 /* LeavingCert2016Tests.swift */; };
 		0179C9E51C3E9B0100B31543 /* LeavingCert2016UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0179C9E41C3E9B0100B31543 /* LeavingCert2016UITests.swift */; };
+		0179C9F31C3E9B6500B31543 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0179C9F21C3E9B6500B31543 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,6 @@
 		0179C9C61C3E9B0100B31543 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0179C9C91C3E9B0100B31543 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0179C9CB1C3E9B0100B31543 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0179C9CE1C3E9B0100B31543 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0179C9D01C3E9B0100B31543 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0179C9D51C3E9B0100B31543 /* LeavingCert2016Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeavingCert2016Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0179C9D91C3E9B0100B31543 /* LeavingCert2016Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeavingCert2016Tests.swift; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		0179C9E01C3E9B0100B31543 /* LeavingCert2016UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeavingCert2016UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0179C9E41C3E9B0100B31543 /* LeavingCert2016UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeavingCert2016UITests.swift; sourceTree = "<group>"; };
 		0179C9E61C3E9B0100B31543 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0179C9F21C3E9B6500B31543 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +99,9 @@
 			children = (
 				0179C9C41C3E9B0100B31543 /* AppDelegate.swift */,
 				0179C9C61C3E9B0100B31543 /* ViewController.swift */,
+				0179C9F21C3E9B6500B31543 /* LaunchScreen.storyboard */,
 				0179C9C81C3E9B0100B31543 /* Main.storyboard */,
 				0179C9CB1C3E9B0100B31543 /* Assets.xcassets */,
-				0179C9CD1C3E9B0100B31543 /* LaunchScreen.storyboard */,
 				0179C9D01C3E9B0100B31543 /* Info.plist */,
 			);
 			path = LeavingCert2016;
@@ -193,6 +193,7 @@
 				TargetAttributes = {
 					0179C9C01C3E9B0100B31543 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = GUREEK3429;
 					};
 					0179C9D41C3E9B0100B31543 = {
 						CreatedOnToolsVersion = 7.2;
@@ -229,7 +230,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0179C9CF1C3E9B0100B31543 /* LaunchScreen.storyboard in Resources */,
+				0179C9F31C3E9B6500B31543 /* LaunchScreen.storyboard in Resources */,
 				0179C9CC1C3E9B0100B31543 /* Assets.xcassets in Resources */,
 				0179C9CA1C3E9B0100B31543 /* Main.storyboard in Resources */,
 			);
@@ -299,14 +300,6 @@
 				0179C9C91C3E9B0100B31543 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		0179C9CD1C3E9B0100B31543 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0179C9CE1C3E9B0100B31543 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -399,7 +392,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = LeavingCert2016/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.darrenmartinleith.LeavingCert2016;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -410,7 +405,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = LeavingCert2016/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.darrenmartinleith.LeavingCert2016;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -484,6 +481,7 @@
 				0179C9EB1C3E9B0100B31543 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0179C9EC1C3E9B0100B31543 /* Build configuration list for PBXNativeTarget "LeavingCert2016Tests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +490,7 @@
 				0179C9EE1C3E9B0100B31543 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0179C9EF1C3E9B0100B31543 /* Build configuration list for PBXNativeTarget "LeavingCert2016UITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +499,7 @@
 				0179C9F11C3E9B0100B31543 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
