@@ -97,7 +97,9 @@ class ViewController: UIViewController {
         paperSegmentControl.selectedSegmentIndex = 0
       }
       gradeLabels[pointsArray.count-1].text = ""
+      gradeLabels[pointsArray.count-1].backgroundColor = UIColor.whiteColor()
       pointsArray.removeLast()
+        print(pointsArray)
       calculatePoints()
       setTotalPointsLabel()
     }
@@ -146,27 +148,27 @@ class ViewController: UIViewController {
         let pointsAchieved = sender.tag - 40
         let text = "\(sender.titleLabel!.text!)\(paperLevel)  \(pointsAchieved)"
         gradeLabels[pointsArray.count].text = text
-        
-        
-        
         pointsArray += [pointsAchieved]
-        
-        
-        
+        print(pointsArray)
+        setColor()
         ordinary = false
       }else if hlMaths {
         let pointsAchieved = sender.tag + 25
         let text = "\(sender.titleLabel!.text!)\(paperLevel)  \(pointsAchieved)"
         gradeLabels[pointsArray.count].text = text
         pointsArray += [pointsAchieved]
+        print(pointsArray)
         paperSegmentControl.setEnabled(false, forSegmentAtIndex: 2)
         paperSegmentControl.selectedSegmentIndex = 0
+                setColor()
         hlMaths = false
       } else {
         let pointsAchieved = sender.tag
         let text = "\(sender.titleLabel!.text!)\(paperLevel)  \(pointsAchieved)"
         gradeLabels[pointsArray.count].text = text
         pointsArray += [pointsAchieved]
+        print(pointsArray)
+        setColor()
         honors = false
       }
     } else if pointsArray.count < 9 {
@@ -175,12 +177,14 @@ class ViewController: UIViewController {
         let text = "\(sender.titleLabel!.text!)\(paperLevel)  \(pointsAchieved)"
         gradeLabels[pointsArray.count].text = text
         pointsArray += [pointsAchieved]
+        print(pointsArray)
         ordinary = false
       } else if hlMaths {
         let pointsAchieved = sender.tag + 25
         let text = "\(sender.titleLabel!.text!)\(paperLevel)  \(pointsAchieved)"
         gradeLabels[pointsArray.count].text = text
         pointsArray += [pointsAchieved]
+        print(pointsArray)
         paperSegmentControl.setEnabled(false, forSegmentAtIndex: 2)
         paperSegmentControl.selectedSegmentIndex = 0
         hlMaths = false
@@ -189,13 +193,13 @@ class ViewController: UIViewController {
         let text = "\(sender.titleLabel!.text!)\(paperLevel)  \(pointsAchieved)"
         gradeLabels[pointsArray.count].text = text
         pointsArray += [pointsAchieved]
+        print(pointsArray)
         honors = false
       }
       gradeLabels[pointsArray.count-1].backgroundColor = UIColor.yellowColor()
     }
     calculatePoints()
     setTotalPointsLabel()
-    
   }
   
   
@@ -208,13 +212,7 @@ class ViewController: UIViewController {
   //MARK: - calculate total points
   func calculatePoints() {
     
-    var dict = [Int: Int]()
-    
-    for i in 0..<pointsArray.count {
-      dict[i] = pointsArray[i]
-    }
-    
-    
+
     sortedPointsArray = pointsArray.sort(>)
     
     var t = 0
@@ -222,6 +220,7 @@ class ViewController: UIViewController {
       t += sortedPointsArray[i]
     }
     totalPoints = t
+    print("Sorted Points Array: \(sortedPointsArray)")
   }
   
   //MARK: - set the total points label
@@ -232,7 +231,18 @@ class ViewController: UIViewController {
   
   //MARK: - TODO
   func setColor() {
-    
+    for i in 0..<9 {
+      gradeLabels[i].backgroundColor = UIColor.whiteColor()
+    }
+    for (index, value) in pointsArray.enumerate() {
+      for i in 0..<sortedPointsArray.count where i < 6 {
+        if pointsArray[index] > sortedPointsArray[i] {
+          print("\(pointsArray[index]) is in the top six")
+          gradeLabels[index].backgroundColor = UIColor.yellowColor()
+          break
+        }
+      }
+    }
   }
   
   override func didReceiveMemoryWarning() {
