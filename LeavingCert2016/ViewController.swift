@@ -90,6 +90,9 @@ class ViewController: UIViewController {
   
   //MARK: - clear Last submitted grade
   @IBAction func clearLast(sender: UIButton) {
+    print("First replaced index \(firstReplacedIndex)")
+    print("Second replaced index \(secondReplacedIndex)")
+    
     if !pointsArray.isEmpty {
       if pointsArray.count == 7 {
         if (gradeLabels[pointsArray.count-1].text!.containsString("+25")) {
@@ -105,20 +108,42 @@ class ViewController: UIViewController {
         calculatePoints()
         setTotalPointsLabel()
         print(pointsArray)
-      } else if pointsArray.count == 8 {
-        if (gradeLabels[pointsArray.count-1].text!.containsString("+25")) {
-          paperSegmentControl.setEnabled(true, forSegmentAtIndex: 2)
-          paperSegmentControl.selectedSegmentIndex = 0
-        }
         
-        if gradeLabels[pointsArray.count-1].backgroundColor == UIColor.yellowColor() {
+        //clearing values from Grade 8
+      } else if pointsArray.count == 8 {
+        
+        //case 7th YES, 8th NO
+        if firstReplacedIndex != -1 && gradeLabels[6].backgroundColor == UIColor.yellowColor() && gradeLabels[7].backgroundColor == UIColor.whiteColor() {
+          print("case 7th YES, 8th NO")
+          totalPoints = totalPoints - pointsArray.last! + pointsArray[firstReplacedIndex]
+        }
+          //case 7th NO, 8th YES
+        else if firstReplacedIndex != -1 && gradeLabels[7].backgroundColor == UIColor.yellowColor() && secondReplacedIndex == -1 {
+          print("case 7th NO, 8th YES")
+          totalPoints = totalPoints - pointsArray.last! + pointsArray[firstReplacedIndex]
+          gradeLabels[firstReplacedIndex].backgroundColor = UIColor.yellowColor()
+          firstReplacedIndex = -1
+        }
+          //case 7th YES, 8th YES
+        else if firstReplacedIndex != -1 && secondReplacedIndex != -1 {
+          print("case 7th YES, 8th YES")
           totalPoints = totalPoints - pointsArray.last! + pointsArray[secondReplacedIndex]
           gradeLabels[secondReplacedIndex].backgroundColor = UIColor.yellowColor()
         }
         
+        if (gradeLabels[pointsArray.count-1].text!.containsString("+25")) {
+          paperSegmentControl.setEnabled(true, forSegmentAtIndex: 2)
+          paperSegmentControl.selectedSegmentIndex = 0
+        }
+      
         gradeLabels[pointsArray.count-1].text = ""
         gradeLabels[pointsArray.count-1].backgroundColor = UIColor.whiteColor()
         pointsArray.removeLast()
+        
+        if pointsArray.count == 0 {
+          clearManual()
+        }
+        
         setTotalPointsLabel()
         print(pointsArray)
       } else {
@@ -131,9 +156,14 @@ class ViewController: UIViewController {
         pointsArray.removeLast()
         calculatePoints()
         setTotalPointsLabel()
-        print(pointsArray)
+        clearManual()
       }
     }
+  }
+  
+  func clearManual() {
+    firstReplacedIndex = -1
+    secondReplacedIndex = -1
   }
   
   //MARK: - clear All
@@ -146,7 +176,8 @@ class ViewController: UIViewController {
     total.text = "Total: 0 Points"
     totalPoints = 0
     pointsArray.removeAll()
-    sortedPointsArray.removeAll()
+    firstReplacedIndex = -1
+    secondReplacedIndex = -1 
   }
   
   //MARK: - determine selected Segment
@@ -259,6 +290,7 @@ class ViewController: UIViewController {
         gradeLabels[7].text = text
         pointsArray += [pointsAchieved]
         
+        //the 7th grade did NOT replace anything in the existing 6 set of grades, therefore 8th grade should check for smallest value
         if firstReplacedIndex == -1 {
           let (smallestIndex, smallestValue) = findSmallestValueInPointsArray()
           if pointsArray[7] > smallestValue {
@@ -267,7 +299,9 @@ class ViewController: UIViewController {
             gradeLabels[smallestIndex].backgroundColor = UIColor.whiteColor()
           firstReplacedIndex = smallestIndex
           }
-        } else {
+        }
+        //the 7th grade DID replace one of the existing 6 therefore need the lowest grade NOT including the grade already chosen
+        else {
         
         let (secondSmallestIndex, secondSmallestValue) = findSecondSmallestValue()
         print("second smallest value is \(secondSmallestValue)")
@@ -282,6 +316,7 @@ class ViewController: UIViewController {
         honors = false
         }
       }
+      print(pointsArray)
     } else if pointsArray.count < 6 {
       if ordinary {
         let pointsAchieved = sender.tag - 40
@@ -308,12 +343,14 @@ class ViewController: UIViewController {
       calculatePoints()
     }
     setTotalPointsLabel()
+    print("First Replaced Index \(firstReplacedIndex)")
+    print("Second Replaced Index \(secondReplacedIndex)")
   }
   
-  func findSmallestValueInPointsArray() -> (value: Int, index: Int) {
+  func findSmallestValueInPointsArray() -> (value: Int, index: Int)  {
     var min = Int.max
     var position = Int.max
-    for (index, value) in pointsArray.enumerate() {
+    for (index, value) in pointsArray.enumerate() where index != 6 {
       if value < min {
         min = value
         position = index
