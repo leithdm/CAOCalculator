@@ -32,7 +32,6 @@ class ViewController: UIViewController {
   @IBOutlet weak var grade6: UILabel!
   @IBOutlet weak var grade7: UILabel!
   @IBOutlet weak var grade8: UILabel!
-  @IBOutlet weak var grade9: UILabel!
   @IBOutlet weak var total: UILabel!
   @IBOutlet weak var paperSegmentControl: UISegmentedControl!
   
@@ -46,10 +45,10 @@ class ViewController: UIViewController {
   var honors: Bool = false
   var totalPoints = 0
   var pointsArray = [Int]()
-  var sortedPointsArray = [Int]()
   var paperLevel = ""
   var firstReplacedIndex = -1
   var secondReplacedIndex = -1
+  var pointsAchieved = 0
   
   //MARK: - viewDidLoad
   override func viewDidLoad() {
@@ -57,13 +56,13 @@ class ViewController: UIViewController {
     
     gradeButtonArray = [a1, a2, b1, b2, b3, c1, c2, c3, d1, d2, d3]
     clearButtonArray = [clear, clearLast]
-    gradeLabels = [grade1, grade2, grade3, grade4, grade5, grade6, grade7, grade8, grade9]
+    gradeLabels = [grade1, grade2, grade3, grade4, grade5, grade6, grade7, grade8]
     configureGradeButtons(gradeButtonArray)
     configureClearButtons(clearButtonArray)
     
   }
   
-  //MARK: - configure the grade buttons
+  //MARK: - configure grade buttons
   func configureGradeButtons(buttons: [UIButton]) {
     for button in buttons {
       button.layer.cornerRadius = CGRectGetHeight(button.bounds)/4
@@ -75,7 +74,7 @@ class ViewController: UIViewController {
     }
   }
   
-  //MARK: - configure the clear buttons
+  //MARK: - configure clear buttons
   func configureClearButtons(buttons: [UIButton]) {
     for button in buttons {
       button.layer.cornerRadius = 8.0
@@ -88,10 +87,10 @@ class ViewController: UIViewController {
   }
   
   
-  //MARK: - clear Last submitted grade
+  //MARK: - Clear Last submitted grade
   @IBAction func clearLast(sender: UIButton) {
-    print("First replaced index \(firstReplacedIndex)")
-    print("Second replaced index \(secondReplacedIndex)")
+//    print("First replaced index \(firstReplacedIndex)")
+//    print("Second replaced index \(secondReplacedIndex)")
     
     if !pointsArray.isEmpty {
       if pointsArray.count == 7 {
@@ -107,26 +106,22 @@ class ViewController: UIViewController {
         }
         calculatePoints()
         setTotalPointsLabel()
-        print(pointsArray)
         
         //clearing values from Grade 8
       } else if pointsArray.count == 8 {
         
         //case 7th YES, 8th NO
         if firstReplacedIndex != -1 && gradeLabels[6].backgroundColor == UIColor.yellowColor() && gradeLabels[7].backgroundColor == UIColor.whiteColor() {
-          print("case 7th YES, 8th NO")
           totalPoints = totalPoints - pointsArray.last! + pointsArray[firstReplacedIndex]
         }
           //case 7th NO, 8th YES
         else if firstReplacedIndex != -1 && gradeLabels[7].backgroundColor == UIColor.yellowColor() && secondReplacedIndex == -1 {
-          print("case 7th NO, 8th YES")
           totalPoints = totalPoints - pointsArray.last! + pointsArray[firstReplacedIndex]
           gradeLabels[firstReplacedIndex].backgroundColor = UIColor.yellowColor()
           firstReplacedIndex = -1
         }
           //case 7th YES, 8th YES
         else if firstReplacedIndex != -1 && secondReplacedIndex != -1 {
-          print("case 7th YES, 8th YES")
           totalPoints = totalPoints - pointsArray.last! + pointsArray[secondReplacedIndex]
           gradeLabels[secondReplacedIndex].backgroundColor = UIColor.yellowColor()
         }
@@ -135,17 +130,17 @@ class ViewController: UIViewController {
           paperSegmentControl.setEnabled(true, forSegmentAtIndex: 2)
           paperSegmentControl.selectedSegmentIndex = 0
         }
-      
+        
         gradeLabels[pointsArray.count-1].text = ""
         gradeLabels[pointsArray.count-1].backgroundColor = UIColor.whiteColor()
         pointsArray.removeLast()
         
+        
+        //TODO: - not necessary ?
         if pointsArray.count == 0 {
           clearManual()
         }
-        
         setTotalPointsLabel()
-        print(pointsArray)
       } else {
         if (gradeLabels[pointsArray.count-1].text!.containsString("+25")) {
           paperSegmentControl.setEnabled(true, forSegmentAtIndex: 2)
@@ -161,9 +156,13 @@ class ViewController: UIViewController {
     }
   }
   
+  //MARK: - Clear manually
   func clearManual() {
     firstReplacedIndex = -1
     secondReplacedIndex = -1
+    honors = false
+    hlMaths = false
+    ordinary = false
   }
   
   //MARK: - clear All
@@ -173,11 +172,14 @@ class ViewController: UIViewController {
       label.backgroundColor = UIColor.whiteColor()
       paperSegmentControl.setEnabled(true, forSegmentAtIndex: 2)
     }
-    total.text = "Total: 0 Points"
+    honors = false
+    hlMaths = false
+    ordinary = false
+    total.text = "0"
     totalPoints = 0
     pointsArray.removeAll()
     firstReplacedIndex = -1
-    secondReplacedIndex = -1 
+    secondReplacedIndex = -1
   }
   
   //MARK: - determine selected Segment
@@ -203,108 +205,66 @@ class ViewController: UIViewController {
     //MARK: - 7 subjects
     if pointsArray.count == 6  {
       if ordinary {
-        let pointsAchieved = sender.tag - 40
-        let text = "\(sender.titleLabel!.text!)\(paperLevel)  \(pointsAchieved)"
-        gradeLabels[6].text = text
-        pointsArray += [pointsAchieved]
-
-        let (smallestIndex, smallestValue) = findSmallestValueInPointsArray()
-        
-        if pointsArray[6] > smallestValue {
-          totalPoints = totalPoints - smallestValue + pointsArray[6]
-          gradeLabels[6].backgroundColor = UIColor.yellowColor()
-          gradeLabels[smallestIndex].backgroundColor = UIColor.whiteColor()
-          firstReplacedIndex = smallestIndex
-        }
+        pointsAchieved = sender.tag - 40
         ordinary = false
-      }else if hlMaths {
-        let pointsAchieved = sender.tag + 25
-        let text = "\(sender.titleLabel!.text!)\(paperLevel)  \(pointsAchieved)"
-        gradeLabels[6].text = text
-        pointsArray += [pointsAchieved]
-        
-        let (smallestIndex, smallestValue) = findSmallestValueInPointsArray()
-        
-        if pointsArray[6] > smallestValue {
-          totalPoints = totalPoints - smallestValue + pointsArray[6]
-          gradeLabels[6].backgroundColor = UIColor.yellowColor()
-          gradeLabels[smallestIndex].backgroundColor = UIColor.whiteColor()
-          firstReplacedIndex = smallestIndex
-        }
+      } else if hlMaths {
+        pointsAchieved = sender.tag + 25
         paperSegmentControl.setEnabled(false, forSegmentAtIndex: 2)
         paperSegmentControl.selectedSegmentIndex = 0
         hlMaths = false
       } else {
-        let pointsAchieved = sender.tag
-        let text = "\(sender.titleLabel!.text!)\(paperLevel)  \(pointsAchieved)"
-        gradeLabels[6].text = text
-        pointsArray += [pointsAchieved]
-        
-        let (smallestIndex, smallestValue) = findSmallestValueInPointsArray()
-        
-        if pointsArray[6] > smallestValue {
-          totalPoints = totalPoints - smallestValue + pointsArray[6]
-          gradeLabels[6].backgroundColor = UIColor.yellowColor()
-          gradeLabels[smallestIndex].backgroundColor = UIColor.whiteColor()
-          firstReplacedIndex = smallestIndex
-        }
+        pointsAchieved = sender.tag
         honors = false
       }
+      let text = "\(sender.titleLabel!.text!)\(paperLevel)  \(pointsAchieved)"
+      gradeLabels[6].text = text
+      pointsArray += [pointsAchieved]
+      
+      let (smallestIndex, smallestValue) = findSmallestValueInPointsArray()
+      
+      if pointsArray[6] > smallestValue {
+        totalPoints = totalPoints - smallestValue + pointsArray[6]
+        gradeLabels[6].backgroundColor = UIColor.yellowColor()
+        gradeLabels[smallestIndex].backgroundColor = UIColor.whiteColor()
+        firstReplacedIndex = smallestIndex
+      }
+      ordinary = false
     }
       
-    //MARK: - 8 subjects
+      //MARK: - 8 subjects
     else if pointsArray.count == 7  {
       if ordinary {
-        let pointsAchieved = sender.tag - 40
-        let text = "\(sender.titleLabel!.text!)\(paperLevel)  \(pointsAchieved)"
-        gradeLabels[7].text = text
-        pointsArray += [pointsAchieved]
-        
-        let (smallestIndex, smallestValue) = findSmallestValueInPointsArray()
-        
-        if pointsArray[7] > smallestValue {
-          totalPoints = totalPoints - smallestValue + pointsArray[7]
-          gradeLabels[7].backgroundColor = UIColor.yellowColor()
-          gradeLabels[smallestIndex].backgroundColor = UIColor.whiteColor()
-        }
+        pointsAchieved = sender.tag - 40
         ordinary = false
-      }else if hlMaths {
-        let pointsAchieved = sender.tag + 25
-        let text = "\(sender.titleLabel!.text!)\(paperLevel)  \(pointsAchieved)"
-        gradeLabels[7].text = text
-        pointsArray += [pointsAchieved]
-        
-        let (smallestIndex, smallestValue) = findSmallestValueInPointsArray()
-        
-        if pointsArray[7] > smallestValue {
-          totalPoints = totalPoints - smallestValue + pointsArray[7]
-          gradeLabels[7].backgroundColor = UIColor.yellowColor()
-          gradeLabels[smallestIndex].backgroundColor = UIColor.whiteColor()
-        }
+      } else if hlMaths {
+        pointsAchieved = sender.tag + 25
         paperSegmentControl.setEnabled(false, forSegmentAtIndex: 2)
         paperSegmentControl.selectedSegmentIndex = 0
         hlMaths = false
       } else {
-        let pointsAchieved = sender.tag
-        let text = "\(sender.titleLabel!.text!)\(paperLevel)  \(pointsAchieved)"
-        gradeLabels[7].text = text
-        pointsArray += [pointsAchieved]
-        
-        //the 7th grade did NOT replace anything in the existing 6 set of grades, therefore 8th grade should check for smallest value
-        if firstReplacedIndex == -1 {
-          let (smallestIndex, smallestValue) = findSmallestValueInPointsArray()
-          if pointsArray[7] > smallestValue {
-            totalPoints = totalPoints - smallestValue + pointsArray[7]
-            gradeLabels[7].backgroundColor = UIColor.yellowColor()
-            gradeLabels[smallestIndex].backgroundColor = UIColor.whiteColor()
+        pointsAchieved = sender.tag
+        honors = false
+      }
+      
+      let text = "\(sender.titleLabel!.text!)\(paperLevel)  \(pointsAchieved)"
+      gradeLabels[7].text = text
+      pointsArray += [pointsAchieved]
+      
+      //the 7th grade did NOT replace anything in the existing 6 set of grades, therefore 8th grade should check for smallest value
+      if firstReplacedIndex == -1 {
+        let (smallestIndex, smallestValue) = findSmallestValueInPointsArray()
+        if pointsArray[7] > smallestValue {
+          totalPoints = totalPoints - smallestValue + pointsArray[7]
+          gradeLabels[7].backgroundColor = UIColor.yellowColor()
+          gradeLabels[smallestIndex].backgroundColor = UIColor.whiteColor()
           firstReplacedIndex = smallestIndex
-          }
         }
+      }
         //the 7th grade DID replace one of the existing 6 therefore need the lowest grade NOT including the grade already chosen
-        else {
+      else {
         
         let (secondSmallestIndex, secondSmallestValue) = findSecondSmallestValue()
-        print("second smallest value is \(secondSmallestValue)")
+//        print("second smallest value is \(secondSmallestValue)")
         
         if pointsArray[7] > secondSmallestValue {
           totalPoints = totalPoints - secondSmallestValue + pointsArray[7]
@@ -312,39 +272,29 @@ class ViewController: UIViewController {
           gradeLabels[secondSmallestIndex].backgroundColor = UIColor.whiteColor()
           secondReplacedIndex = secondSmallestIndex
         }
-        
-        honors = false
-        }
       }
-      print(pointsArray)
     } else if pointsArray.count < 6 {
       if ordinary {
-        let pointsAchieved = sender.tag - 40
-        let text = "\(sender.titleLabel!.text!)\(paperLevel)  \(pointsAchieved)"
-        gradeLabels[pointsArray.count].text = text
-        pointsArray += [pointsAchieved]
+        pointsAchieved = sender.tag - 40
         ordinary = false
       } else if hlMaths {
-        let pointsAchieved = sender.tag + 25
-        let text = "\(sender.titleLabel!.text!)\(paperLevel)  \(pointsAchieved)"
-        gradeLabels[pointsArray.count].text = text
-        pointsArray += [pointsAchieved]
+        pointsAchieved = sender.tag + 25
         paperSegmentControl.setEnabled(false, forSegmentAtIndex: 2)
         paperSegmentControl.selectedSegmentIndex = 0
         hlMaths = false
       } else {
-        let pointsAchieved = sender.tag
-        let text = "\(sender.titleLabel!.text!)\(paperLevel)  \(pointsAchieved)"
-        gradeLabels[pointsArray.count].text = text
-        pointsArray += [pointsAchieved]
+        pointsAchieved = sender.tag
         honors = false
       }
+      let text = "\(sender.titleLabel!.text!)\(paperLevel)  \(pointsAchieved)"
+      gradeLabels[pointsArray.count].text = text
+      pointsArray += [pointsAchieved]
       gradeLabels[pointsArray.count-1].backgroundColor = UIColor.yellowColor()
       calculatePoints()
     }
     setTotalPointsLabel()
-    print("First Replaced Index \(firstReplacedIndex)")
-    print("Second Replaced Index \(secondReplacedIndex)")
+//    print("First Replaced Index \(firstReplacedIndex)")
+//    print("Second Replaced Index \(secondReplacedIndex)")
   }
   
   func findSmallestValueInPointsArray() -> (value: Int, index: Int)  {
@@ -356,7 +306,7 @@ class ViewController: UIViewController {
         position = index
       }
     }
-    print("smallest position is \(position), smallest value is \(min)")
+//    print("smallest position is \(position), smallest value is \(min)")
     return (position, min)
   }
   
@@ -369,11 +319,11 @@ class ViewController: UIViewController {
         position = index
       }
     }
-    print("2nd smallest position is \(position), 2nd smallest value is \(min)")
+//    print("2nd smallest position is \(position), 2nd smallest value is \(min)")
     return (position, min)
   }
   
-  //MARK: - set the results label
+  //MARK: - set results label
   func setResultLabel(label: UILabel, sender: UIButton, pointsAchieved: Int) {
     let text = "\(sender.titleLabel!.text!)\(paperLevel)  \(pointsAchieved)"
     label.text = text
@@ -381,24 +331,19 @@ class ViewController: UIViewController {
   
   //MARK: - calculate total points
   func calculatePoints() {
-//    sortedPointsArray = pointsArray.sort(>)
-
+    //    sortedPointsArray = pointsArray.sort(>)
+    
     var t = 0
     for i in 0..<pointsArray.count where i < 6 {
       t += pointsArray[i]
     }
     totalPoints = t
-    print("Points Array: \(pointsArray)")
+//    print("Points Array: \(pointsArray)")
   }
   
-  //MARK: - set the total points label
+  //MARK: - set total points label
   func setTotalPointsLabel() {
-    total.text = "Total: \(totalPoints) points"
-    
-  }
-  
-  //MARK: - TODO
-  func setColor() {
+    total.text = "\(totalPoints)"
   }
   
   override func didReceiveMemoryWarning() {

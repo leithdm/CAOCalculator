@@ -21,8 +21,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qsj-St-zWa">
                                 <rect key="frame" x="20" y="72" width="560" height="33"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="g9R-bc-K9y">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="34"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="g9R-bc-K9y">
+                                        <rect key="frame" x="0.0" y="2" width="560" height="34"/>
                                         <segments>
                                             <segment title="Higher"/>
                                             <segment title="Ordinary"/>
@@ -42,13 +42,122 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a7G-T0-9Se">
                                 <rect key="frame" x="20" y="114" width="560" height="437"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfL-C5-z45">
+                                        <rect key="frame" x="288" y="0.0" width="272" height="437"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ib0-uR-lTz">
+                                                <rect key="frame" x="0.0" y="0.0" width="264" height="40.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.11181893199682236" green="0.1118365004658699" blue="0.1118125319480896" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJA-4H-IUK">
+                                                <rect key="frame" x="0.0" y="39" width="264" height="41"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.11181893199682236" green="0.1118365004658699" blue="0.1118125319480896" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AgN-lW-a0G">
+                                                <rect key="frame" x="0.0" y="79" width="264" height="40.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.11181893199682236" green="0.1118365004658699" blue="0.1118125319480896" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmP-0Z-sUe">
+                                                <rect key="frame" x="0.0" y="119" width="264" height="40.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.11181893199682236" green="0.1118365004658699" blue="0.1118125319480896" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ir4-c2-hNi">
+                                                <rect key="frame" x="0.0" y="158" width="264" height="40.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.11181893199682236" green="0.1118365004658699" blue="0.1118125319480896" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4z-kk-HCq">
+                                                <rect key="frame" x="0.0" y="198" width="264" height="41"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.11181893199682236" green="0.1118365004658699" blue="0.1118125319480896" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3L-r9-BaF">
+                                                <rect key="frame" x="0.0" y="238" width="264" height="40.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="9" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnz-TH-P2u">
+                                                <rect key="frame" x="0.0" y="317" width="264" height="41"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="7" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cma-MK-GD3">
+                                                <rect key="frame" x="0.0" y="277" width="264" height="40.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Pz-oH-5xx">
+                                                <rect key="frame" x="0.0" y="357" width="264" height="79.5"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="60"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="rmP-0Z-sUe" firstAttribute="top" secondItem="AgN-lW-a0G" secondAttribute="bottom" constant="-1" id="0og-WK-Pvd"/>
+                                            <constraint firstItem="xnz-TH-P2u" firstAttribute="height" secondItem="5Pz-oH-5xx" secondAttribute="height" constant="-38.5" id="2Tx-4B-GI3"/>
+                                            <constraint firstItem="M4z-kk-HCq" firstAttribute="leading" secondItem="gfL-C5-z45" secondAttribute="leading" id="2mv-mN-cim"/>
+                                            <constraint firstItem="rmP-0Z-sUe" firstAttribute="height" secondItem="ir4-c2-hNi" secondAttribute="height" id="2ts-Ls-QbR"/>
+                                            <constraint firstAttribute="trailing" secondItem="5Pz-oH-5xx" secondAttribute="trailing" constant="8" id="4io-1h-BOL"/>
+                                            <constraint firstItem="AgN-lW-a0G" firstAttribute="top" secondItem="VJA-4H-IUK" secondAttribute="bottom" constant="-1" id="68i-KO-rrw"/>
+                                            <constraint firstItem="ir4-c2-hNi" firstAttribute="top" secondItem="rmP-0Z-sUe" secondAttribute="bottom" constant="-1" id="9nf-Zg-In2"/>
+                                            <constraint firstItem="M4z-kk-HCq" firstAttribute="top" secondItem="ir4-c2-hNi" secondAttribute="bottom" constant="-1" id="BRi-Fx-Zae"/>
+                                            <constraint firstItem="5Pz-oH-5xx" firstAttribute="top" secondItem="xnz-TH-P2u" secondAttribute="bottom" constant="-1" id="E8B-d5-nYe"/>
+                                            <constraint firstItem="a3L-r9-BaF" firstAttribute="top" secondItem="M4z-kk-HCq" secondAttribute="bottom" constant="-1" id="GSF-SL-ifC"/>
+                                            <constraint firstAttribute="trailing" secondItem="M4z-kk-HCq" secondAttribute="trailing" constant="8" id="IhB-Rk-1CZ"/>
+                                            <constraint firstItem="VJA-4H-IUK" firstAttribute="height" secondItem="AgN-lW-a0G" secondAttribute="height" id="KLu-6P-u6K"/>
+                                            <constraint firstAttribute="trailing" secondItem="ir4-c2-hNi" secondAttribute="trailing" constant="8" id="KOV-bf-AXq"/>
+                                            <constraint firstItem="5Pz-oH-5xx" firstAttribute="leading" secondItem="gfL-C5-z45" secondAttribute="leading" id="LlA-Zf-grQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="rmP-0Z-sUe" secondAttribute="trailing" constant="8" id="MdX-PY-W8x"/>
+                                            <constraint firstItem="Cma-MK-GD3" firstAttribute="height" secondItem="xnz-TH-P2u" secondAttribute="height" id="N3r-Es-c9b"/>
+                                            <constraint firstAttribute="trailing" secondItem="Cma-MK-GD3" secondAttribute="trailing" constant="8" id="O2Y-gI-Xyj"/>
+                                            <constraint firstItem="ib0-uR-lTz" firstAttribute="top" secondItem="gfL-C5-z45" secondAttribute="top" id="OsI-Ic-fry"/>
+                                            <constraint firstItem="ir4-c2-hNi" firstAttribute="height" secondItem="M4z-kk-HCq" secondAttribute="height" id="Ptx-KC-SKF"/>
+                                            <constraint firstAttribute="bottom" secondItem="5Pz-oH-5xx" secondAttribute="bottom" id="SG8-uk-vyh"/>
+                                            <constraint firstItem="ib0-uR-lTz" firstAttribute="leading" secondItem="gfL-C5-z45" secondAttribute="leading" id="T7y-RM-kgK"/>
+                                            <constraint firstAttribute="trailing" secondItem="ib0-uR-lTz" secondAttribute="trailing" constant="8" id="TvX-Pw-XmZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="a3L-r9-BaF" secondAttribute="trailing" constant="8" id="UBF-mC-irC"/>
+                                            <constraint firstItem="Cma-MK-GD3" firstAttribute="top" secondItem="a3L-r9-BaF" secondAttribute="bottom" constant="-1" id="UhF-zt-eyI"/>
+                                            <constraint firstItem="VJA-4H-IUK" firstAttribute="leading" secondItem="gfL-C5-z45" secondAttribute="leading" id="UiD-fK-1HA"/>
+                                            <constraint firstItem="VJA-4H-IUK" firstAttribute="top" secondItem="ib0-uR-lTz" secondAttribute="bottom" constant="-1" id="Wag-IF-bNO"/>
+                                            <constraint firstItem="AgN-lW-a0G" firstAttribute="height" secondItem="rmP-0Z-sUe" secondAttribute="height" id="ZjA-U6-Dqp"/>
+                                            <constraint firstItem="xnz-TH-P2u" firstAttribute="leading" secondItem="gfL-C5-z45" secondAttribute="leading" id="a9h-2L-uhg"/>
+                                            <constraint firstItem="ib0-uR-lTz" firstAttribute="height" secondItem="VJA-4H-IUK" secondAttribute="height" id="hyH-tx-7wW"/>
+                                            <constraint firstItem="M4z-kk-HCq" firstAttribute="height" secondItem="a3L-r9-BaF" secondAttribute="height" id="jLo-kg-jL7"/>
+                                            <constraint firstAttribute="trailing" secondItem="AgN-lW-a0G" secondAttribute="trailing" constant="8" id="k8h-i6-LON"/>
+                                            <constraint firstItem="AgN-lW-a0G" firstAttribute="leading" secondItem="gfL-C5-z45" secondAttribute="leading" id="lZu-sf-6XT"/>
+                                            <constraint firstItem="ir4-c2-hNi" firstAttribute="leading" secondItem="gfL-C5-z45" secondAttribute="leading" id="mI0-Oh-80P"/>
+                                            <constraint firstItem="Cma-MK-GD3" firstAttribute="leading" secondItem="gfL-C5-z45" secondAttribute="leading" id="oau-Rd-ve3"/>
+                                            <constraint firstAttribute="trailing" secondItem="VJA-4H-IUK" secondAttribute="trailing" constant="8" id="p80-D5-jig"/>
+                                            <constraint firstItem="rmP-0Z-sUe" firstAttribute="leading" secondItem="gfL-C5-z45" secondAttribute="leading" id="pHG-5f-M4a"/>
+                                            <constraint firstItem="a3L-r9-BaF" firstAttribute="height" secondItem="Cma-MK-GD3" secondAttribute="height" id="pRY-1C-HMC"/>
+                                            <constraint firstItem="a3L-r9-BaF" firstAttribute="leading" secondItem="gfL-C5-z45" secondAttribute="leading" id="rIA-cY-ND9"/>
+                                            <constraint firstAttribute="trailing" secondItem="xnz-TH-P2u" secondAttribute="trailing" constant="8" id="tAj-Ds-Xzf"/>
+                                            <constraint firstItem="xnz-TH-P2u" firstAttribute="top" secondItem="Cma-MK-GD3" secondAttribute="bottom" constant="-0.5" id="vjw-bq-C8J"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mUj-gq-jaV">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="437"/>
                                         <subviews>
                                             <button opaque="NO" tag="70" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZA-iG-zE1">
                                                 <rect key="frame" x="144" y="148" width="135.5" height="66.5"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="20"/>
+                                                <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="0.095959051724137934" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="21"/>
                                                 <state key="normal" title="C1">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -58,8 +167,8 @@
                                             </button>
                                             <button opaque="NO" tag="60" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8v-d9-RDR">
                                                 <rect key="frame" x="144" y="222" width="135.5" height="66.5"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="20"/>
+                                                <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="0.095959051724137934" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="21"/>
                                                 <state key="normal" title="C3">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -69,8 +178,8 @@
                                             </button>
                                             <button opaque="NO" tag="75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tv9-vk-bXK">
                                                 <rect key="frame" x="0.0" y="148" width="136" height="66.5"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="20"/>
+                                                <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="0.095959051724137934" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="21"/>
                                                 <state key="normal" title="B3">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -80,8 +189,8 @@
                                             </button>
                                             <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KkW-Qg-izX">
                                                 <rect key="frame" x="0.0" y="0.0" width="136" height="66.5"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="20"/>
+                                                <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="0.095959051724137934" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="21"/>
                                                 <state key="normal" title="A1">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -91,8 +200,8 @@
                                             </button>
                                             <button opaque="NO" tag="90" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5g-tY-F7G">
                                                 <rect key="frame" x="144" y="0.0" width="135.5" height="66.5"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="20"/>
+                                                <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="0.095959051724137934" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="21"/>
                                                 <state key="normal" title="A2">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -102,8 +211,8 @@
                                             </button>
                                             <button opaque="NO" tag="50" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUN-ov-7pR">
                                                 <rect key="frame" x="144" y="297" width="135.5" height="65.5"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="20"/>
+                                                <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="0.095959051724137934" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="21"/>
                                                 <state key="normal" title="D2">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -116,8 +225,8 @@
                                             </button>
                                             <button opaque="NO" tag="65" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXU-JZ-ytv">
                                                 <rect key="frame" x="0.0" y="222" width="136" height="66.5"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="20"/>
+                                                <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="0.095959051724137934" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="21"/>
                                                 <state key="normal" title="C2">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -127,8 +236,8 @@
                                             </button>
                                             <button opaque="NO" tag="45" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7c-BA-T7b">
                                                 <rect key="frame" x="0.0" y="370" width="136" height="66.5"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="20"/>
+                                                <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="0.095959051724137934" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="21"/>
                                                 <state key="normal" title="D3">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -138,16 +247,30 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dER-nw-7QK">
                                                 <rect key="frame" x="144" y="370" width="136" height="66.5"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="20"/>
+                                                <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="0.095959051724137934" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="21"/>
                                                 <state key="normal">
                                                     <color key="titleColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                             </button>
+                                            <button opaque="NO" tag="55" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7CM-Dv-Nyp">
+                                                <rect key="frame" x="0.0" y="297" width="136" height="65.5"/>
+                                                <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="0.095959051724137934" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="21"/>
+                                                <state key="normal" title="D1">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="409.5" width="186" height="93.5"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="gradeSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aLR-H4-2yn"/>
+                                                </connections>
+                                            </button>
                                             <button opaque="NO" tag="85" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30x-3d-l1F">
                                                 <rect key="frame" x="0.0" y="74" width="137" height="65.5"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="20"/>
+                                                <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="0.095959051724137934" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="21"/>
                                                 <state key="normal" title="B1">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -160,8 +283,8 @@
                                             </button>
                                             <button opaque="NO" tag="80" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="if1-QS-nk8">
                                                 <rect key="frame" x="145" y="74" width="136.5" height="65.5"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="20"/>
+                                                <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="0.095959051724137934" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="21"/>
                                                 <state key="normal" title="B2">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -170,20 +293,6 @@
                                                 </variation>
                                                 <connections>
                                                     <action selector="gradeSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HcX-47-uEB"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="55" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7CM-Dv-Nyp">
-                                                <rect key="frame" x="0.0" y="297" width="136" height="65.5"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="20"/>
-                                                <state key="normal" title="D1">
-                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="0.0" y="409.5" width="186" height="93.5"/>
-                                                </variation>
-                                                <connections>
-                                                    <action selector="gradeSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aLR-H4-2yn"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -246,124 +355,6 @@
                                             <constraint firstItem="KkW-Qg-izX" firstAttribute="leading" secondItem="mUj-gq-jaV" secondAttribute="leading" id="ygr-dV-Jrs"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfL-C5-z45">
-                                        <rect key="frame" x="288" y="0.0" width="272" height="437"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ib0-uR-lTz">
-                                                <rect key="frame" x="0.0" y="0.0" width="264" height="40.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.11181893199682236" green="0.1118365004658699" blue="0.1118125319480896" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJA-4H-IUK">
-                                                <rect key="frame" x="0.0" y="39" width="264" height="41"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.11181893199682236" green="0.1118365004658699" blue="0.1118125319480896" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AgN-lW-a0G">
-                                                <rect key="frame" x="0.0" y="79" width="264" height="40.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.11181893199682236" green="0.1118365004658699" blue="0.1118125319480896" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmP-0Z-sUe">
-                                                <rect key="frame" x="0.0" y="119" width="264" height="40.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.11181893199682236" green="0.1118365004658699" blue="0.1118125319480896" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ir4-c2-hNi">
-                                                <rect key="frame" x="0.0" y="158" width="264" height="40.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.11181893199682236" green="0.1118365004658699" blue="0.1118125319480896" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4z-kk-HCq">
-                                                <rect key="frame" x="0.0" y="198" width="264" height="41"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.11181893199682236" green="0.1118365004658699" blue="0.1118125319480896" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3L-r9-BaF">
-                                                <rect key="frame" x="0.0" y="238" width="264" height="40.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="9" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="________________________________________________" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnz-TH-P2u">
-                                                <rect key="frame" x="0.0" y="356" width="264" height="41"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="7" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cma-MK-GD3">
-                                                <rect key="frame" x="0.0" y="277" width="264" height="40.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: 0 Points" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Pz-oH-5xx">
-                                                <rect key="frame" x="0.0" y="396" width="264" height="40.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="8" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYh-x7-nBa">
-                                                <rect key="frame" x="0.0" y="317" width="264" height="40.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="rmP-0Z-sUe" firstAttribute="top" secondItem="AgN-lW-a0G" secondAttribute="bottom" constant="-1" id="0og-WK-Pvd"/>
-                                            <constraint firstItem="xnz-TH-P2u" firstAttribute="height" secondItem="5Pz-oH-5xx" secondAttribute="height" id="2Tx-4B-GI3"/>
-                                            <constraint firstItem="M4z-kk-HCq" firstAttribute="leading" secondItem="gfL-C5-z45" secondAttribute="leading" id="2mv-mN-cim"/>
-                                            <constraint firstItem="rmP-0Z-sUe" firstAttribute="height" secondItem="ir4-c2-hNi" secondAttribute="height" id="2ts-Ls-QbR"/>
-                                            <constraint firstAttribute="trailing" secondItem="5Pz-oH-5xx" secondAttribute="trailing" constant="8" id="4io-1h-BOL"/>
-                                            <constraint firstItem="mYh-x7-nBa" firstAttribute="leading" secondItem="gfL-C5-z45" secondAttribute="leading" id="5ef-Yn-I9J"/>
-                                            <constraint firstItem="AgN-lW-a0G" firstAttribute="top" secondItem="VJA-4H-IUK" secondAttribute="bottom" constant="-1" id="68i-KO-rrw"/>
-                                            <constraint firstItem="ir4-c2-hNi" firstAttribute="top" secondItem="rmP-0Z-sUe" secondAttribute="bottom" constant="-1" id="9nf-Zg-In2"/>
-                                            <constraint firstItem="M4z-kk-HCq" firstAttribute="top" secondItem="ir4-c2-hNi" secondAttribute="bottom" constant="-1" id="BRi-Fx-Zae"/>
-                                            <constraint firstItem="5Pz-oH-5xx" firstAttribute="top" secondItem="xnz-TH-P2u" secondAttribute="bottom" constant="-1" id="E8B-d5-nYe"/>
-                                            <constraint firstItem="a3L-r9-BaF" firstAttribute="top" secondItem="M4z-kk-HCq" secondAttribute="bottom" constant="-1" id="GSF-SL-ifC"/>
-                                            <constraint firstAttribute="trailing" secondItem="M4z-kk-HCq" secondAttribute="trailing" constant="8" id="IhB-Rk-1CZ"/>
-                                            <constraint firstAttribute="trailing" secondItem="mYh-x7-nBa" secondAttribute="trailing" constant="8" id="JGt-bN-rU0"/>
-                                            <constraint firstItem="VJA-4H-IUK" firstAttribute="height" secondItem="AgN-lW-a0G" secondAttribute="height" id="KLu-6P-u6K"/>
-                                            <constraint firstAttribute="trailing" secondItem="ir4-c2-hNi" secondAttribute="trailing" constant="8" id="KOV-bf-AXq"/>
-                                            <constraint firstItem="5Pz-oH-5xx" firstAttribute="leading" secondItem="gfL-C5-z45" secondAttribute="leading" id="LlA-Zf-grQ"/>
-                                            <constraint firstAttribute="trailing" secondItem="rmP-0Z-sUe" secondAttribute="trailing" constant="8" id="MdX-PY-W8x"/>
-                                            <constraint firstAttribute="trailing" secondItem="Cma-MK-GD3" secondAttribute="trailing" constant="8" id="O2Y-gI-Xyj"/>
-                                            <constraint firstItem="ib0-uR-lTz" firstAttribute="top" secondItem="gfL-C5-z45" secondAttribute="top" id="OsI-Ic-fry"/>
-                                            <constraint firstItem="ir4-c2-hNi" firstAttribute="height" secondItem="M4z-kk-HCq" secondAttribute="height" id="Ptx-KC-SKF"/>
-                                            <constraint firstAttribute="bottom" secondItem="5Pz-oH-5xx" secondAttribute="bottom" id="SG8-uk-vyh"/>
-                                            <constraint firstItem="ib0-uR-lTz" firstAttribute="leading" secondItem="gfL-C5-z45" secondAttribute="leading" id="T7y-RM-kgK"/>
-                                            <constraint firstAttribute="trailing" secondItem="ib0-uR-lTz" secondAttribute="trailing" constant="8" id="TvX-Pw-XmZ"/>
-                                            <constraint firstAttribute="trailing" secondItem="a3L-r9-BaF" secondAttribute="trailing" constant="8" id="UBF-mC-irC"/>
-                                            <constraint firstItem="Cma-MK-GD3" firstAttribute="top" secondItem="a3L-r9-BaF" secondAttribute="bottom" constant="-1" id="UhF-zt-eyI"/>
-                                            <constraint firstItem="VJA-4H-IUK" firstAttribute="leading" secondItem="gfL-C5-z45" secondAttribute="leading" id="UiD-fK-1HA"/>
-                                            <constraint firstItem="Cma-MK-GD3" firstAttribute="height" secondItem="mYh-x7-nBa" secondAttribute="height" id="Vxw-h2-aJs"/>
-                                            <constraint firstItem="VJA-4H-IUK" firstAttribute="top" secondItem="ib0-uR-lTz" secondAttribute="bottom" constant="-1" id="Wag-IF-bNO"/>
-                                            <constraint firstItem="AgN-lW-a0G" firstAttribute="height" secondItem="rmP-0Z-sUe" secondAttribute="height" id="ZjA-U6-Dqp"/>
-                                            <constraint firstItem="xnz-TH-P2u" firstAttribute="leading" secondItem="gfL-C5-z45" secondAttribute="leading" id="a9h-2L-uhg"/>
-                                            <constraint firstItem="xnz-TH-P2u" firstAttribute="top" secondItem="mYh-x7-nBa" secondAttribute="bottom" constant="-1" id="dMb-Lg-0bU"/>
-                                            <constraint firstItem="ib0-uR-lTz" firstAttribute="height" secondItem="VJA-4H-IUK" secondAttribute="height" id="hyH-tx-7wW"/>
-                                            <constraint firstItem="M4z-kk-HCq" firstAttribute="height" secondItem="a3L-r9-BaF" secondAttribute="height" id="jLo-kg-jL7"/>
-                                            <constraint firstItem="mYh-x7-nBa" firstAttribute="height" secondItem="xnz-TH-P2u" secondAttribute="height" id="jT9-bB-ARD"/>
-                                            <constraint firstAttribute="trailing" secondItem="AgN-lW-a0G" secondAttribute="trailing" constant="8" id="k8h-i6-LON"/>
-                                            <constraint firstItem="AgN-lW-a0G" firstAttribute="leading" secondItem="gfL-C5-z45" secondAttribute="leading" id="lZu-sf-6XT"/>
-                                            <constraint firstItem="ir4-c2-hNi" firstAttribute="leading" secondItem="gfL-C5-z45" secondAttribute="leading" id="mI0-Oh-80P"/>
-                                            <constraint firstItem="Cma-MK-GD3" firstAttribute="leading" secondItem="gfL-C5-z45" secondAttribute="leading" id="oau-Rd-ve3"/>
-                                            <constraint firstAttribute="trailing" secondItem="VJA-4H-IUK" secondAttribute="trailing" constant="8" id="p80-D5-jig"/>
-                                            <constraint firstItem="rmP-0Z-sUe" firstAttribute="leading" secondItem="gfL-C5-z45" secondAttribute="leading" id="pHG-5f-M4a"/>
-                                            <constraint firstItem="a3L-r9-BaF" firstAttribute="height" secondItem="Cma-MK-GD3" secondAttribute="height" id="pRY-1C-HMC"/>
-                                            <constraint firstItem="mYh-x7-nBa" firstAttribute="top" secondItem="Cma-MK-GD3" secondAttribute="bottom" constant="-1" id="qrL-yz-yZa"/>
-                                            <constraint firstItem="a3L-r9-BaF" firstAttribute="leading" secondItem="gfL-C5-z45" secondAttribute="leading" id="rIA-cY-ND9"/>
-                                            <constraint firstAttribute="trailing" secondItem="xnz-TH-P2u" secondAttribute="trailing" constant="8" id="tAj-Ds-Xzf"/>
-                                        </constraints>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -394,10 +385,10 @@
                                     </button>
                                     <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCD-S0-Xhj">
                                         <rect key="frame" x="284" y="0.0" width="276" height="33"/>
-                                        <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.97670525312423706" green="0.60546392202377319" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="18"/>
                                         <state key="normal" title="Reset">
-                                            <color key="titleColor" red="0.12637259066104889" green="0.12639245390892029" blue="0.12636536359786987" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="clear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gir-9g-gxD"/>
@@ -468,7 +459,6 @@
                         <outlet property="grade6" destination="M4z-kk-HCq" id="Pwt-hW-mXZ"/>
                         <outlet property="grade7" destination="a3L-r9-BaF" id="xuM-pd-iOm"/>
                         <outlet property="grade8" destination="Cma-MK-GD3" id="fpt-Af-MB6"/>
-                        <outlet property="grade9" destination="mYh-x7-nBa" id="RHl-xU-tfd"/>
                         <outlet property="paperSegmentControl" destination="g9R-bc-K9y" id="PLE-jL-Ewi"/>
                         <outlet property="total" destination="5Pz-oH-5xx" id="sDV-RU-mxr"/>
                     </connections>
