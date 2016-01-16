@@ -60,19 +60,20 @@ class ViewController: UIViewController {
     gradeLabels = [grade1, grade2, grade3, grade4, grade5, grade6, grade7, grade8]
     configureGradeButtons(gradeButtonArray)
     configureClearButtons(clearButtonArray)
-    topSixColor = UIColor.init(red: 0/255, green: 170/255, blue: 79/255, alpha: 0.5)
+    //topSixColor = UIColor.init(red: 0/255, green: 170/255, blue: 79/255, alpha: 0.5)
+    topSixColor = UIColor.init(red: 200/255, green: 164/255, blue: 164/255, alpha: 1.0)
     
   }
   
   //MARK: - configure grade buttons
   func configureGradeButtons(buttons: [UIButton]) {
     for button in buttons {
-      button.layer.cornerRadius = CGRectGetHeight(button.bounds)/4
-      button.layer.borderWidth = 0.1
+//      button.layer.cornerRadius = CGRectGetHeight(button.bounds)/4
+      button.layer.borderWidth = 0.5
       button.layer.borderColor = UIColor.darkGrayColor().CGColor
-      button.layer.shadowRadius = 0.7
-      button.layer.shadowOpacity = 0.5
-      button.layer.shadowOffset = CGSize.zero
+//      button.layer.shadowRadius = 0.7
+//      button.layer.shadowOpacity = 0.5
+//      button.layer.shadowOffset = CGSize.zero
     }
   }
   
