@@ -80,12 +80,12 @@ class ViewController: UIViewController {
   //MARK: - configure clear buttons
   func configureClearButtons(buttons: [UIButton]) {
     for button in buttons {
-      button.layer.cornerRadius = 8.0
-      button.layer.borderWidth = 0.05
-      button.layer.borderColor = UIColor.darkGrayColor().CGColor
-      button.layer.shadowRadius = 0.7
-      button.layer.shadowOpacity = 0.5
-      button.layer.shadowOffset = CGSize.zero
+      button.layer.cornerRadius = 4.0
+      button.layer.borderWidth = 0.6
+      button.layer.borderColor = UIColor.lightGrayColor().CGColor
+//      button.layer.shadowRadius = 0.7
+//      button.layer.shadowOpacity = 0.5
+//      button.layer.shadowOffset = CGSize.zero
     }
   }
   
