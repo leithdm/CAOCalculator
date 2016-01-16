@@ -69,7 +69,7 @@ class ViewController: UIViewController {
   func configureGradeButtons(buttons: [UIButton]) {
     for button in buttons {
 //      button.layer.cornerRadius = CGRectGetHeight(button.bounds)/4
-      button.layer.borderWidth = 0.5
+      button.layer.borderWidth = 0.3
       button.layer.borderColor = UIColor.darkGrayColor().CGColor
 //      button.layer.shadowRadius = 0.7
 //      button.layer.shadowOpacity = 0.5
