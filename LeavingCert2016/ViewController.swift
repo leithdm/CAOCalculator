@@ -49,6 +49,7 @@ class ViewController: UIViewController {
   var firstReplacedIndex = -1
   var secondReplacedIndex = -1
   var pointsAchieved = 0
+  var topSixColor = UIColor()
   
   //MARK: - viewDidLoad
   override func viewDidLoad() {
@@ -59,6 +60,7 @@ class ViewController: UIViewController {
     gradeLabels = [grade1, grade2, grade3, grade4, grade5, grade6, grade7, grade8]
     configureGradeButtons(gradeButtonArray)
     configureClearButtons(clearButtonArray)
+    topSixColor = UIColor.init(red: 0/255, green: 170/255, blue: 79/255, alpha: 0.5)
     
   }
   
@@ -102,7 +104,7 @@ class ViewController: UIViewController {
         gradeLabels[pointsArray.count-1].backgroundColor = UIColor.whiteColor()
         pointsArray.removeLast()
         for i in 0..<6 {
-          gradeLabels[i].backgroundColor = UIColor.yellowColor()
+          gradeLabels[i].backgroundColor = topSixColor
         }
         calculatePoints()
         setTotalPointsLabel()
@@ -111,19 +113,19 @@ class ViewController: UIViewController {
       } else if pointsArray.count == 8 {
         
         //case 7th YES, 8th NO
-        if firstReplacedIndex != -1 && gradeLabels[6].backgroundColor == UIColor.yellowColor() && gradeLabels[7].backgroundColor == UIColor.whiteColor() {
+        if firstReplacedIndex != -1 && gradeLabels[6].backgroundColor == topSixColor && gradeLabels[7].backgroundColor == UIColor.whiteColor() {
           totalPoints = totalPoints - pointsArray.last! + pointsArray[firstReplacedIndex]
         }
           //case 7th NO, 8th YES
-        else if firstReplacedIndex != -1 && gradeLabels[7].backgroundColor == UIColor.yellowColor() && secondReplacedIndex == -1 {
+        else if firstReplacedIndex != -1 && gradeLabels[7].backgroundColor == topSixColor && secondReplacedIndex == -1 {
           totalPoints = totalPoints - pointsArray.last! + pointsArray[firstReplacedIndex]
-          gradeLabels[firstReplacedIndex].backgroundColor = UIColor.yellowColor()
+          gradeLabels[firstReplacedIndex].backgroundColor = topSixColor
           firstReplacedIndex = -1
         }
           //case 7th YES, 8th YES
         else if firstReplacedIndex != -1 && secondReplacedIndex != -1 {
           totalPoints = totalPoints - pointsArray.last! + pointsArray[secondReplacedIndex]
-          gradeLabels[secondReplacedIndex].backgroundColor = UIColor.yellowColor()
+          gradeLabels[secondReplacedIndex].backgroundColor = topSixColor
         }
         
         if (gradeLabels[pointsArray.count-1].text!.containsString("+25")) {
@@ -224,7 +226,7 @@ class ViewController: UIViewController {
       
       if pointsArray[6] > smallestValue {
         totalPoints = totalPoints - smallestValue + pointsArray[6]
-        gradeLabels[6].backgroundColor = UIColor.yellowColor()
+        gradeLabels[6].backgroundColor = topSixColor
         gradeLabels[smallestIndex].backgroundColor = UIColor.whiteColor()
         firstReplacedIndex = smallestIndex
       }
@@ -255,7 +257,7 @@ class ViewController: UIViewController {
         let (smallestIndex, smallestValue) = findSmallestValueInPointsArray()
         if pointsArray[7] > smallestValue {
           totalPoints = totalPoints - smallestValue + pointsArray[7]
-          gradeLabels[7].backgroundColor = UIColor.yellowColor()
+          gradeLabels[7].backgroundColor = topSixColor
           gradeLabels[smallestIndex].backgroundColor = UIColor.whiteColor()
           firstReplacedIndex = smallestIndex
         }
@@ -268,7 +270,7 @@ class ViewController: UIViewController {
         
         if pointsArray[7] > secondSmallestValue {
           totalPoints = totalPoints - secondSmallestValue + pointsArray[7]
-          gradeLabels[7].backgroundColor = UIColor.yellowColor()
+          gradeLabels[7].backgroundColor = topSixColor
           gradeLabels[secondSmallestIndex].backgroundColor = UIColor.whiteColor()
           secondReplacedIndex = secondSmallestIndex
         }
@@ -289,7 +291,7 @@ class ViewController: UIViewController {
       let text = "\(sender.titleLabel!.text!)\(paperLevel)  \(pointsAchieved)"
       gradeLabels[pointsArray.count].text = text
       pointsArray += [pointsAchieved]
-      gradeLabels[pointsArray.count-1].backgroundColor = UIColor.yellowColor()
+      gradeLabels[pointsArray.count-1].backgroundColor = topSixColor
       calculatePoints()
     }
     setTotalPointsLabel()
